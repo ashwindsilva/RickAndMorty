@@ -72,7 +72,7 @@
 		A20B892D2B6E753200A068DD /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				A20B89432B6E86F600A068DD /* Screens */,
+				A20B897A2B6EC55F00A068DD /* Modules */,
 				A20B89422B6E86E100A068DD /* Resources */,
 				A20B89452B6E8D3E00A068DD /* Setup */,
 			);
@@ -85,14 +85,6 @@
 				A20B89372B6E753300A068DD /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		A20B89432B6E86F600A068DD /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				A20B89442B6E870600A068DD /* LaunchScreen */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		A20B89442B6E870600A068DD /* LaunchScreen */ = {
@@ -118,6 +110,14 @@
 			children = (
 			);
 			path = RickAndMortyTests;
+			sourceTree = "<group>";
+		};
+		A20B897A2B6EC55F00A068DD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89442B6E870600A068DD /* LaunchScreen */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
