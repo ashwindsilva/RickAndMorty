@@ -52,13 +52,45 @@
 		A20B892D2B6E753200A068DD /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				A20B892E2B6E753200A068DD /* AppDelegate.swift */,
-				A20B89302B6E753200A068DD /* SceneDelegate.swift */,
-				A20B89372B6E753300A068DD /* Assets.xcassets */,
-				A20B89392B6E753300A068DD /* LaunchScreen.storyboard */,
-				A20B893C2B6E753300A068DD /* Info.plist */,
+				A20B89432B6E86F600A068DD /* Screens */,
+				A20B89422B6E86E100A068DD /* Resources */,
+				A20B89452B6E8D3E00A068DD /* Setup */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		A20B89422B6E86E100A068DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89372B6E753300A068DD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A20B89432B6E86F600A068DD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89442B6E870600A068DD /* LaunchScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A20B89442B6E870600A068DD /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89392B6E753300A068DD /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		A20B89452B6E8D3E00A068DD /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				A20B892E2B6E753200A068DD /* AppDelegate.swift */,
+				A20B89302B6E753200A068DD /* SceneDelegate.swift */,
+				A20B893C2B6E753300A068DD /* Info.plist */,
+			);
+			path = Setup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KU7CB5928;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMorty/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/Setup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -305,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KU7CB5928;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMorty/Info.plist;
+				INFOPLIST_FILE = RickAndMorty/Setup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
