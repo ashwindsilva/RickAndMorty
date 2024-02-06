@@ -31,7 +31,7 @@ final class AppContainer {
     }
     
     func makeCharactersViewController() -> CharactersViewController {
-        let charactersViewController = CharactersViewController()
+        let charactersViewController = CharactersViewController(viewModel: .init())
         charactersViewController.title = Tab.characters.title
         
         return charactersViewController

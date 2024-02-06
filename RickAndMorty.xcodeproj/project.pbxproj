@@ -24,6 +24,8 @@
 		A20B899F2B6EDA9800A068DD /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B899E2B6EDA9800A068DD /* LocationsViewController.swift */; };
 		A20B89A32B6EDC6200A068DD /* EpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89A22B6EDC6200A068DD /* EpisodesCoordinator.swift */; };
 		A20B89A52B6EDCC300A068DD /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89A42B6EDCC300A068DD /* EpisodesViewController.swift */; };
+		A20B89B52B7208E700A068DD /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89B42B7208E700A068DD /* CharactersView.swift */; };
+		A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89B62B72091600A068DD /* CharactersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A20B899E2B6EDA9800A068DD /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		A20B89A22B6EDC6200A068DD /* EpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCoordinator.swift; sourceTree = "<group>"; };
 		A20B89A42B6EDCC300A068DD /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		A20B89B42B7208E700A068DD /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		A20B89B62B72091600A068DD /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 			children = (
 				A20B89892B6ECA3500A068DD /* CharactersCoordinator.swift */,
 				A20B898B2B6ECA5400A068DD /* CharactersViewController.swift */,
+				A20B89B42B7208E700A068DD /* CharactersView.swift */,
+				A20B89B62B72091600A068DD /* CharactersViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -353,10 +359,12 @@
 				A20B89922B6ED4AE00A068DD /* SFSymbols.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
+				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
 				A20B89992B6ED58800A068DD /* Tab.swift in Sources */,
 				A20B89842B6EC85C00A068DD /* DashboardViewController.swift in Sources */,
 				A20B89312B6E753200A068DD /* SceneDelegate.swift in Sources */,
 				A20B89A32B6EDC6200A068DD /* EpisodesCoordinator.swift in Sources */,
+				A20B89B52B7208E700A068DD /* CharactersView.swift in Sources */,
 				A20B899F2B6EDA9800A068DD /* LocationsViewController.swift in Sources */,
 				A20B897F2B6EC6E200A068DD /* Coordinator.swift in Sources */,
 				A20B899D2B6EDA2F00A068DD /* LocationsCoordinator.swift in Sources */,
