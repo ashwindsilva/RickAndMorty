@@ -18,6 +18,8 @@ class CharactersView: UIView {
     init(viewModel: CharactersViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
+        
+        backgroundColor = .systemBackground
     }
     
     required init?(coder: NSCoder) {
