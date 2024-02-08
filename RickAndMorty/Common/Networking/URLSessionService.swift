@@ -20,7 +20,7 @@ struct URLSessionNetworkService: NetworkService {
         self.urlSession = urlSession
     }
     
-    func request(_ url: URL) -> any Publisher<Data, NetworkError> {
+    func request(_ url: URL) -> AnyPublisher<Data, NetworkError> {
         urlSession.dataTaskPublisher(for: url)
             .tryMap { (data, response) in
                 guard let httpURLResponse = response as? HTTPURLResponse,
@@ -39,5 +39,6 @@ struct URLSessionNetworkService: NetworkService {
             .mapError { error in
                 return NetworkError.unknown(error)
             }
+            .eraseToAnyPublisher()
     }
 }

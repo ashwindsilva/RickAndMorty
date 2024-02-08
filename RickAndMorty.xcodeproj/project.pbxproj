@@ -39,6 +39,10 @@
 		A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A2D2B74F3A500A068DD /* CharacterList.swift */; };
 		A20B8A432B754D3F00A068DD /* InfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A422B754D3F00A068DD /* InfoMapper.swift */; };
 		A20B8A462B754DCB00A068DD /* CharacterRepositoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */; };
+		A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A502B7553F000A068DD /* CharacterNetworkDataSource.swift */; };
+		A20B8A532B7553F000A068DD /* CharacterDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A512B7553F000A068DD /* CharacterDataSourceProtocol.swift */; };
+		A20B8A552B7554A500A068DD /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A542B7554A500A068DD /* CharacterRepository.swift */; };
+		A20B8A572B7554C800A068DD /* CharacterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		A20B8A2D2B74F3A500A068DD /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 		A20B8A422B754D3F00A068DD /* InfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapper.swift; sourceTree = "<group>"; };
 		A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryMapper.swift; sourceTree = "<group>"; };
+		A20B8A502B7553F000A068DD /* CharacterNetworkDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterNetworkDataSource.swift; sourceTree = "<group>"; };
+		A20B8A512B7553F000A068DD /* CharacterDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDataSourceProtocol.swift; sourceTree = "<group>"; };
+		A20B8A542B7554A500A068DD /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +298,7 @@
 			children = (
 				A20B89E62B73734600A068DD /* Entities */,
 				A20B8A442B754DA500A068DD /* Repositories */,
+				A20B8A4F2B7553F000A068DD /* DataSources */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -400,8 +409,19 @@
 			isa = PBXGroup;
 			children = (
 				A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */,
+				A20B8A542B7554A500A068DD /* CharacterRepository.swift */,
+				A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A20B8A4F2B7553F000A068DD /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A502B7553F000A068DD /* CharacterNetworkDataSource.swift */,
+				A20B8A512B7553F000A068DD /* CharacterDataSourceProtocol.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,14 +526,18 @@
 			files = (
 				A20B8A462B754DCB00A068DD /* CharacterRepositoryMapper.swift in Sources */,
 				A20B8A242B74F1C300A068DD /* CharacterListDTO.swift in Sources */,
+				A20B8A532B7553F000A068DD /* CharacterDataSourceProtocol.swift in Sources */,
 				A20B89A52B6EDCC300A068DD /* EpisodesViewController.swift in Sources */,
 				A20B898C2B6ECA5400A068DD /* CharactersViewController.swift in Sources */,
+				A20B8A572B7554C800A068DD /* CharacterRepositoryProtocol.swift in Sources */,
+				A20B8A552B7554A500A068DD /* CharacterRepository.swift in Sources */,
 				A20B892F2B6E753200A068DD /* AppDelegate.swift in Sources */,
 				A20B89922B6ED4AE00A068DD /* SFSymbols.swift in Sources */,
 				A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
 				A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
+				A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */,
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
 				A20B89EC2B7374E700A068DD /* Character.swift in Sources */,
 				A20B8A102B74C08100A068DD /* NetworkError.swift in Sources */,

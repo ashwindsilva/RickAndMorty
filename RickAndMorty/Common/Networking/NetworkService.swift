@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol NetworkService {
-    func request(_ url: URL) -> any Publisher<Data, NetworkError>
+    func request(_ url: URL) -> AnyPublisher<Data, NetworkError>
 }
