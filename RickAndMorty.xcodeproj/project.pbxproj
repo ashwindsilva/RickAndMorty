@@ -145,8 +145,8 @@
 			children = (
 				A20B892E2B6E753200A068DD /* AppDelegate.swift */,
 				A20B89302B6E753200A068DD /* SceneDelegate.swift */,
-				A20B893C2B6E753300A068DD /* Info.plist */,
 				A20B89852B6EC89000A068DD /* AppContainer.swift */,
+				A20B893C2B6E753300A068DD /* Info.plist */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -161,11 +161,11 @@
 		A20B897A2B6EC55F00A068DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A20B89A02B6EDC3800A068DD /* Episodes */,
-				A20B899A2B6EDA0400A068DD /* Locations */,
-				A20B89872B6ECA1800A068DD /* Characters */,
-				A20B897C2B6EC6BB00A068DD /* Dashboard */,
 				A20B89442B6E870600A068DD /* LaunchScreen */,
+				A20B897C2B6EC6BB00A068DD /* Dashboard */,
+				A20B89872B6ECA1800A068DD /* Characters */,
+				A20B899A2B6EDA0400A068DD /* Locations */,
+				A20B89A02B6EDC3800A068DD /* Episodes */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -182,10 +182,10 @@
 		A20B897D2B6EC6D100A068DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A20B8A072B74898000A068DD /* Layers */,
+				A20B8A092B74899100A068DD /* Networking */,
+				A20B89952B6ED4E400A068DD /* Constants */,
 				A20B897E2B6EC6E200A068DD /* Coordinator.swift */,
 				A20B89EF2B73931A00A068DD /* DateFormatter+Extension.swift */,
-				A20B89952B6ED4E400A068DD /* Constants */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -212,11 +212,10 @@
 		A20B89882B6ECA2200A068DD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A20B8A132B74D79100A068DD /* Views */,
+				A20B8A152B74D7A200A068DD /* ViewModels */,
+				A20B8A142B74D79700A068DD /* ViewControllers */,
 				A20B89892B6ECA3500A068DD /* CharactersCoordinator.swift */,
-				A20B898B2B6ECA5400A068DD /* CharactersViewController.swift */,
-				A20B89B42B7208E700A068DD /* CharactersView.swift */,
-				A20B89B62B72091600A068DD /* CharactersViewModel.swift */,
-				A20B89DC2B73403900A068DD /* CharacterCollectionViewCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -305,22 +304,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		A20B8A072B74898000A068DD /* Layers */ = {
-			isa = PBXGroup;
-			children = (
-				A20B8A082B74898700A068DD /* Data */,
-			);
-			path = Layers;
-			sourceTree = "<group>";
-		};
-		A20B8A082B74898700A068DD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A20B8A092B74899100A068DD /* Networking */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		A20B8A092B74899100A068DD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +311,31 @@
 				A20B8A0F2B74C08100A068DD /* NetworkError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		A20B8A132B74D79100A068DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89B42B7208E700A068DD /* CharactersView.swift */,
+				A20B89DC2B73403900A068DD /* CharacterCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A20B8A142B74D79700A068DD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A20B898B2B6ECA5400A068DD /* CharactersViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A20B8A152B74D7A200A068DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A20B89B62B72091600A068DD /* CharactersViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
