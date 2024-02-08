@@ -33,6 +33,7 @@
 		A20B89F02B73931A00A068DD /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89EF2B73931A00A068DD /* DateFormatter+Extension.swift */; };
 		A20B8A0E2B749F9C00A068DD /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */; };
 		A20B8A102B74C08100A068DD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A0F2B74C08100A068DD /* NetworkError.swift */; };
+		A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A212B74EFA600A068DD /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A20B89EF2B73931A00A068DD /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
 		A20B8A0F2B74C08100A068DD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A20B8A212B74EFA600A068DD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 			children = (
 				A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */,
 				A20B8A0F2B74C08100A068DD /* NetworkError.swift */,
+				A20B8A212B74EFA600A068DD /* NetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				A20B898C2B6ECA5400A068DD /* CharactersViewController.swift in Sources */,
 				A20B892F2B6E753200A068DD /* AppDelegate.swift in Sources */,
 				A20B89922B6ED4AE00A068DD /* SFSymbols.swift in Sources */,
+				A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,

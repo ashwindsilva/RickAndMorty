@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-struct URLSessionNetworkService {
+struct URLSessionNetworkService: NetworkService {
     
     // MARK: - Properties
     
@@ -26,7 +26,7 @@ struct URLSessionNetworkService {
         self.urlSession = urlSession
     }
     
-    func request<T: Decodable>(_ url: URL) -> some Publisher<T, Error> {
+    func request<T: Decodable>(_ url: URL) -> any Publisher<T, Error> {
         urlSession.dataTaskPublisher(for: url)
             .tryMap { (data, response) in
                 guard let httpURLResponse = response as? HTTPURLResponse,
