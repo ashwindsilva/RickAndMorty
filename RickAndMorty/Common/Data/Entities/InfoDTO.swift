@@ -13,16 +13,3 @@ struct InfoDTO: Codable {
     let next: String?
     let prev: String?
 }
-
-// MARK: - Mapping
-
-extension InfoDTO {
-    func toDomain() -> Info {
-        .init(
-            count: count,
-            pages: pages,
-            next: .init(string: next ?? .init()),
-            prev: .init(string: prev ?? .init())
-        )
-    }
-}

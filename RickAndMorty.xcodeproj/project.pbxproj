@@ -29,7 +29,6 @@
 		A20B89DD2B73403900A068DD /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89DC2B73403900A068DD /* CharacterCollectionViewCell.swift */; };
 		A20B89E82B73735D00A068DD /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89E72B73735D00A068DD /* CharacterDTO.swift */; };
 		A20B89EC2B7374E700A068DD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89EB2B7374E700A068DD /* Character.swift */; };
-		A20B89EE2B737F1500A068DD /* CharacterDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89ED2B737F1500A068DD /* CharacterDTO+Mapping.swift */; };
 		A20B89F02B73931A00A068DD /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B89EF2B73931A00A068DD /* DateFormatter+Extension.swift */; };
 		A20B8A0E2B749F9C00A068DD /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */; };
 		A20B8A102B74C08100A068DD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A0F2B74C08100A068DD /* NetworkError.swift */; };
@@ -38,6 +37,8 @@
 		A20B8A282B74F23300A068DD /* InfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A272B74F23300A068DD /* InfoDTO.swift */; };
 		A20B8A2C2B74F28C00A068DD /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A2B2B74F28C00A068DD /* Info.swift */; };
 		A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A2D2B74F3A500A068DD /* CharacterList.swift */; };
+		A20B8A432B754D3F00A068DD /* InfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A422B754D3F00A068DD /* InfoMapper.swift */; };
+		A20B8A462B754DCB00A068DD /* CharacterRepositoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,6 @@
 		A20B89DC2B73403900A068DD /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		A20B89E72B73735D00A068DD /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
 		A20B89EB2B7374E700A068DD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		A20B89ED2B737F1500A068DD /* CharacterDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterDTO+Mapping.swift"; sourceTree = "<group>"; };
 		A20B89EF2B73931A00A068DD /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
 		A20B8A0F2B74C08100A068DD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -85,6 +85,8 @@
 		A20B8A272B74F23300A068DD /* InfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDTO.swift; sourceTree = "<group>"; };
 		A20B8A2B2B74F28C00A068DD /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		A20B8A2D2B74F3A500A068DD /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
+		A20B8A422B754D3F00A068DD /* InfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapper.swift; sourceTree = "<group>"; };
+		A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				A20B89E62B73734600A068DD /* Entities */,
+				A20B8A442B754DA500A068DD /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -295,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				A20B89E72B73735D00A068DD /* CharacterDTO.swift */,
-				A20B89ED2B737F1500A068DD /* CharacterDTO+Mapping.swift */,
 				A20B8A232B74F1C300A068DD /* CharacterListDTO.swift */,
 			);
 			path = Entities;
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				A20B8A262B74F21A00A068DD /* Entities */,
+				A20B8A412B754D2E00A068DD /* Mappers */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -383,6 +386,22 @@
 				A20B8A2B2B74F28C00A068DD /* Info.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		A20B8A412B754D2E00A068DD /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A422B754D3F00A068DD /* InfoMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		A20B8A442B754DA500A068DD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,7 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A20B89EE2B737F1500A068DD /* CharacterDTO+Mapping.swift in Sources */,
+				A20B8A462B754DCB00A068DD /* CharacterRepositoryMapper.swift in Sources */,
 				A20B8A242B74F1C300A068DD /* CharacterListDTO.swift in Sources */,
 				A20B89A52B6EDCC300A068DD /* EpisodesViewController.swift in Sources */,
 				A20B898C2B6ECA5400A068DD /* CharactersViewController.swift in Sources */,
@@ -513,6 +532,7 @@
 				A20B89862B6EC89000A068DD /* AppContainer.swift in Sources */,
 				A20B89F02B73931A00A068DD /* DateFormatter+Extension.swift in Sources */,
 				A20B898A2B6ECA3500A068DD /* CharactersCoordinator.swift in Sources */,
+				A20B8A432B754D3F00A068DD /* InfoMapper.swift in Sources */,
 				A20B8A282B74F23300A068DD /* InfoDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

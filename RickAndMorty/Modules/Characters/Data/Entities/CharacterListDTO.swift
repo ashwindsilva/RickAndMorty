@@ -11,15 +11,3 @@ struct CharacterListDTO: Codable {
     let info: InfoDTO?
     let results: [CharacterDTO]?
 }
-
-// MARK: - Mapping
-
-extension CharacterListDTO {
-    func toDomain() -> CharacterList {
-        .init(
-            info: info?.toDomain(),
-            results: results?.map { $0.toDomain() }
-        )
-    }
-}
-
