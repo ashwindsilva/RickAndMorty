@@ -316,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				A20B89EA2B7374D700A068DD /* Entities */,
+				A20B8A582B75581100A068DD /* Repositories */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -409,7 +410,6 @@
 			isa = PBXGroup;
 			children = (
 				A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */,
-				A20B8A542B7554A500A068DD /* CharacterRepository.swift */,
 				A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */,
 			);
 			path = Repositories;
@@ -418,10 +418,18 @@
 		A20B8A4F2B7553F000A068DD /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				A20B8A502B7553F000A068DD /* CharacterNetworkDataSource.swift */,
 				A20B8A512B7553F000A068DD /* CharacterDataSourceProtocol.swift */,
+				A20B8A502B7553F000A068DD /* CharacterNetworkDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		A20B8A582B75581100A068DD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A542B7554A500A068DD /* CharacterRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
