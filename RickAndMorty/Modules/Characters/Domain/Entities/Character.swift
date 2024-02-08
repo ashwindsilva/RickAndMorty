@@ -39,12 +39,12 @@ extension Character {
     }
     
     struct Origin {
-        let name: String
-        let url: URL
+        let name: String?
+        let url: URL?
     }
 
     struct Location {
-        let name: String
-        let url: URL
+        let name: String?
+        let url: URL?
     }
 }
