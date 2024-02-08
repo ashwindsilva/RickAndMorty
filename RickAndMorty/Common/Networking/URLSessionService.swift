@@ -14,19 +14,13 @@ struct URLSessionNetworkService: NetworkService {
     
     let urlSession: URLSession
     
-    private let jsonDecoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
-    
     // MARK: - Methods
     
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
     
-    func request<T: Decodable>(_ url: URL) -> any Publisher<T, Error> {
+    func request(_ url: URL) -> any Publisher<Data, NetworkError> {
         urlSession.dataTaskPublisher(for: url)
             .tryMap { (data, response) in
                 guard let httpURLResponse = response as? HTTPURLResponse,
@@ -42,13 +36,8 @@ struct URLSessionNetworkService: NetworkService {
                 
                 return data
             }
-            .decode(type: T.self, decoder: jsonDecoder)
             .mapError { error in
-                if error is DecodingError {
-                    return NetworkError.decoding(error)
-                } else {
-                    return NetworkError.unknown(error)
-                }
+                return NetworkError.unknown(error)
             }
     }
 }

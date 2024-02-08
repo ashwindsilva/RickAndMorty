@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol NetworkService {
-    func request<T: Decodable>(_ url: URL) -> any Publisher<T, Error>
+    func request(_ url: URL) -> any Publisher<Data, NetworkError>
 }
