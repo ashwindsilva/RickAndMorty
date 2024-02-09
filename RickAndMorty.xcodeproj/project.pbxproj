@@ -138,6 +138,7 @@
 		A20B892D2B6E753200A068DD /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A20B8A782B75DF0600A068DD /* Preview Content */,
 				A20B897D2B6EC6D100A068DD /* Common */,
 				A20B897A2B6EC55F00A068DD /* Modules */,
 				A20B89422B6E86E100A068DD /* Resources */,
@@ -443,6 +444,13 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		A20B8A782B75DF0600A068DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -736,6 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KU7CB5928;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Setup/Info.plist;
@@ -764,6 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/Preview Content\"";
 				DEVELOPMENT_TEAM = 7KU7CB5928;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Setup/Info.plist;
