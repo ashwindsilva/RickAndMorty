@@ -48,3 +48,14 @@ extension Character {
         let url: URL?
     }
 }
+
+// MARK: - Hashable
+
+extension Character: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        lhs.hashValue == rhs.hashValue
+    }
+}

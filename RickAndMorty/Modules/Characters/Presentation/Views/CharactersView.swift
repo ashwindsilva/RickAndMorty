@@ -10,10 +10,14 @@ import UIKit
 
 class CharactersView: UIView {
     
+    private typealias DataSource = UICollectionViewDiffableDataSource<CharactersViewModel.Section, Character>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersViewModel.Section, Character>
+    
     // MARK: - Properties
     
-    let viewModel: CharactersViewModel
+    private let viewModel: CharactersViewModel
     private var subscriptions: Set<AnyCancellable> = .init()
+    private lazy var dataSource = makeDataSource()
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
@@ -60,7 +64,18 @@ class CharactersView: UIView {
             forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier
         )
         
-        collectionView.dataSource = self
+        collectionView.dataSource = dataSource
+    }
+    
+    private func setupBindings() {
+        let charactersHandler: ([Character]) -> Void = { [weak self] _ in
+            self?.applySnapshot()
+        }
+        
+        viewModel.$characters
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: charactersHandler)
+            .store(in: &subscriptions)
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
@@ -94,30 +109,27 @@ class CharactersView: UIView {
         return layout
     }
     
-    private func setupBindings() {
-        viewModel.$characters
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.collectionView.reloadData()
-            }
-            .store(in: &subscriptions)
-    }
-}
-
-extension CharactersView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.characters.count
+    private func makeDataSource() -> DataSource {
+        DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    private func characterCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ character: Character) -> CharacterCollectionViewCell? {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier,
-            for: indexPath) as? CharacterCollectionViewCell
-        else {
+            for: indexPath
+        ) as? CharacterCollectionViewCell else {
             fatalError("Failed to dequeue CharacterCollectionViewCell")
         }
         
         return cell
+    }
+    
+    private func applySnapshot() {
+        var snapshot = Snapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(viewModel.characters)
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 

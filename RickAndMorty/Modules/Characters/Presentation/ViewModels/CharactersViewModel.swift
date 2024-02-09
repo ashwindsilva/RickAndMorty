@@ -48,4 +48,8 @@ extension CharactersViewModel {
         case empty
         case loaded
     }
+    
+    enum Section {
+        case  main
+    }
 }
