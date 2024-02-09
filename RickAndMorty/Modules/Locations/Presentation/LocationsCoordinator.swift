@@ -12,19 +12,19 @@ final class LocationsCoordinator: NavigationCoordinator {
     // MARK: - Properties
     
     let navigationController: UINavigationController
-    let appContainer: AppContainer
+    let locationsFactory: LocationsFactoryProtocol
     
     // MARK: - Init
     
-    init(appContainer: AppContainer) {
-        self.navigationController = appContainer.makeLocationsNavigationController()
-        self.appContainer = appContainer
+    init(navigationController: UINavigationController, locationsFactory: LocationsFactoryProtocol) {
+        self.navigationController = navigationController
+        self.locationsFactory = locationsFactory
     }
     
     // MARK: - Methods
     
     func start() {
-        let locationsViewController = appContainer.makeLocationsViewController()
+        let locationsViewController = locationsFactory.makeLocationsViewController()
         navigationController.pushViewController(locationsViewController, animated: false)
     }
 }

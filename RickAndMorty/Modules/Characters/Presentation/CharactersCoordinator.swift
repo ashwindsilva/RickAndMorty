@@ -12,19 +12,19 @@ final class CharactersCoordinator: NavigationCoordinator {
     // MARK: - Properties
     
     let navigationController: UINavigationController
-    let appContainer: AppContainer
+    let charactersFactory: CharactersFactoryProtocol
     
     // MARK: - Init
     
-    init(appContainer: AppContainer) {
-        self.navigationController = appContainer.makeCharactersNavigationController()
-        self.appContainer = appContainer
+    init(navigationController: UINavigationController, charactersFactory: CharactersFactoryProtocol) {
+        self.navigationController = navigationController
+        self.charactersFactory = charactersFactory
     }
     
     // MARK: - Methods
     
     func start() {
-        let charactersViewController = appContainer.makeCharactersViewController()
+        let charactersViewController = charactersFactory.makeCharactersViewController()
         navigationController.pushViewController(charactersViewController, animated: false)
     }
 }

@@ -44,6 +44,10 @@
 		A20B8A552B7554A500A068DD /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A542B7554A500A068DD /* CharacterRepository.swift */; };
 		A20B8A572B7554C800A068DD /* CharacterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */; };
 		A20B8A5D2B7558FE00A068DD /* GetCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A5C2B7558FE00A068DD /* GetCharactersUseCase.swift */; };
+		A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A812B75EA2900A068DD /* DashboardFactory.swift */; };
+		A20B8A842B75EA8500A068DD /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A832B75EA8500A068DD /* CharactersFactory.swift */; };
+		A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */; };
+		A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A872B75EAA900A068DD /* LocationsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		A20B8A542B7554A500A068DD /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A20B8A5C2B7558FE00A068DD /* GetCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCase.swift; sourceTree = "<group>"; };
+		A20B8A812B75EA2900A068DD /* DashboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFactory.swift; sourceTree = "<group>"; };
+		A20B8A832B75EA8500A068DD /* CharactersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFactory.swift; sourceTree = "<group>"; };
+		A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesFactory.swift; sourceTree = "<group>"; };
+		A20B8A872B75EAA900A068DD /* LocationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,7 @@
 		A20B89452B6E8D3E00A068DD /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				A20B8A802B75EA0F00A068DD /* Factories */,
 				A20B892E2B6E753200A068DD /* AppDelegate.swift */,
 				A20B89302B6E753200A068DD /* SceneDelegate.swift */,
 				A20B89852B6EC89000A068DD /* AppContainer.swift */,
@@ -451,6 +460,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A20B8A802B75EA0F00A068DD /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A812B75EA2900A068DD /* DashboardFactory.swift */,
+				A20B8A832B75EA8500A068DD /* CharactersFactory.swift */,
+				A20B8A872B75EAA900A068DD /* LocationsFactory.swift */,
+				A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,9 +581,12 @@
 				A20B8A552B7554A500A068DD /* CharacterRepository.swift in Sources */,
 				A20B892F2B6E753200A068DD /* AppDelegate.swift in Sources */,
 				A20B89922B6ED4AE00A068DD /* SFSymbols.swift in Sources */,
+				A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */,
 				A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
+				A20B8A842B75EA8500A068DD /* CharactersFactory.swift in Sources */,
 				A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */,
+				A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
 				A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */,
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
@@ -585,6 +608,7 @@
 				A20B89F02B73931A00A068DD /* DateFormatter+Extension.swift in Sources */,
 				A20B898A2B6ECA3500A068DD /* CharactersCoordinator.swift in Sources */,
 				A20B8A432B754D3F00A068DD /* InfoMapper.swift in Sources */,
+				A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */,
 				A20B8A282B74F23300A068DD /* InfoDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

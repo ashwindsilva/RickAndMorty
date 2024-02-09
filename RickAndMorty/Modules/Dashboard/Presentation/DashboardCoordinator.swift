@@ -12,19 +12,35 @@ final class DashboardCoordinator: Coordinator {
     // MARK: - Properties
     
     private let window: UIWindow
-    private let appContainer: AppContainer
+    private let dashboardFactory: DashboardFactoryProtocol
+    private let charactersFactory: CharactersFactoryProtocol
+    private let locationsFactory: LocationsFactoryProtocol
+    private let episodesFactory: EpisodesFactoryProtocol
     
     // MARK: - Init
     
-    init(window: UIWindow, appContainer: AppContainer) {
+    init(
+        window: UIWindow,
+        dashboardFactory: DashboardFactoryProtocol = DashboardFactory(),
+        charactersFactory: CharactersFactoryProtocol = CharactersFactory(),
+        locationsFactory: LocationsFactoryProtocol = LocationsFactory(),
+        episodesFactory: EpisodesFactoryProtocol = EpisodesFactory()
+    ) {
         self.window = window
-        self.appContainer = appContainer
+        self.dashboardFactory = dashboardFactory
+        self.charactersFactory = charactersFactory
+        self.locationsFactory = locationsFactory
+        self.episodesFactory = episodesFactory
     }
     
     // MARK: - Methods
     
     func start() {
-        window.rootViewController = appContainer.makeDashboardViewController()
+        window.rootViewController = dashboardFactory.makeDashboardViewController(
+            charactersFactory: charactersFactory,
+            locationsFactory: locationsFactory,
+            episodesFactory: episodesFactory
+        )
         window.makeKeyAndVisible()
     }
 }

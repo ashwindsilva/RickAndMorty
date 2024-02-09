@@ -12,19 +12,19 @@ final class EpisodesCoordinator: NavigationCoordinator {
     // MARK: - Properties
     
     let navigationController: UINavigationController
-    let appContainer: AppContainer
+    let episodesFactory: EpisodesFactoryProtocol
     
     // MARK: - Init
     
-    init(appContainer: AppContainer) {
-        self.navigationController = appContainer.makeEpisodesNavigationController()
-        self.appContainer = appContainer
+    init(navigationController: UINavigationController, episodesFactory: EpisodesFactoryProtocol) {
+        self.navigationController = navigationController
+        self.episodesFactory = episodesFactory
     }
     
     // MARK: - Methods
     
     func start() {
-        let episodesViewController = appContainer.makeEpisodesViewController()
+        let episodesViewController = episodesFactory.makeEpisodesViewController()
         navigationController.pushViewController(episodesViewController, animated: false)
     }
 }
