@@ -5,6 +5,7 @@
 //  Created by Ashwin D'Silva on 06/02/24.
 //
 
+import Combine
 import UIKit
 
 class CharactersView: UIView {
@@ -12,6 +13,7 @@ class CharactersView: UIView {
     // MARK: - Properties
     
     let viewModel: CharactersViewModel
+    private var subscriptions: Set<AnyCancellable> = .init()
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
@@ -27,7 +29,10 @@ class CharactersView: UIView {
         super.init(frame: .zero)
         
         setupUI()
+        setupBindings()
         configureCollectionView()
+        
+        viewModel.getCharacters()
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +59,8 @@ class CharactersView: UIView {
             CharacterCollectionViewCell.self,
             forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier
         )
+        
+        collectionView.dataSource = self
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
@@ -86,11 +93,20 @@ class CharactersView: UIView {
         
         return layout
     }
+    
+    private func setupBindings() {
+        viewModel.$characters
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &subscriptions)
+    }
 }
 
 extension CharactersView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

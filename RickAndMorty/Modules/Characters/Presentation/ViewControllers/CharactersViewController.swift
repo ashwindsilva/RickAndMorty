@@ -52,6 +52,8 @@ class CharactersViewController: UIViewController {
             contentUnavailableConfiguration = loadingContentUnavailableConfiguration()
         case .empty:
             contentUnavailableConfiguration = emptyContentUnavailableConfiguration()
+        case .loaded:
+            contentUnavailableConfiguration = nil
         }
     }
     
