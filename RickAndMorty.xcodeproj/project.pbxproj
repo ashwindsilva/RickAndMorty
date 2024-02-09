@@ -48,6 +48,7 @@
 		A20B8A842B75EA8500A068DD /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A832B75EA8500A068DD /* CharactersFactory.swift */; };
 		A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */; };
 		A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A872B75EAA900A068DD /* LocationsFactory.swift */; };
+		A20B8A8A2B763FF400A068DD /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A892B763FF400A068DD /* CharacterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		A20B8A832B75EA8500A068DD /* CharactersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFactory.swift; sourceTree = "<group>"; };
 		A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesFactory.swift; sourceTree = "<group>"; };
 		A20B8A872B75EAA900A068DD /* LocationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFactory.swift; sourceTree = "<group>"; };
+		A20B8A892B763FF400A068DD /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				A20B89B62B72091600A068DD /* CharactersViewModel.swift */,
+				A20B8A892B763FF400A068DD /* CharacterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
 				A20B89EC2B7374E700A068DD /* Character.swift in Sources */,
 				A20B8A102B74C08100A068DD /* NetworkError.swift in Sources */,
+				A20B8A8A2B763FF400A068DD /* CharacterViewModel.swift in Sources */,
 				A20B89992B6ED58800A068DD /* Tab.swift in Sources */,
 				A20B8A2C2B74F28C00A068DD /* Info.swift in Sources */,
 				A20B89842B6EC85C00A068DD /* DashboardViewController.swift in Sources */,

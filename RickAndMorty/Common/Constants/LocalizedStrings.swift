@@ -14,4 +14,6 @@ enum LocalizedStrings {
     
     static let noCharacters = NSLocalizedString("no characters", comment: "no characters")
     static let loadingCharacters = NSLocalizedString("loading characters", comment: "loading characters")
+    
+    static let na = NSLocalizedString("NA", comment: "NA")
 }

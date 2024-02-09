@@ -14,9 +14,9 @@ final class CharactersViewModel: ObservableObject {
     
     @Published private(set) var viewState: ViewState = .empty
     
-    @Published private(set) var characters: [Character] = .init() {
+    @Published private(set) var viewModels: [CharacterViewModel] = .init() {
         didSet {
-            if characters.isEmpty == false {
+            if viewModels.isEmpty == false {
                 viewState = .loaded
             }
         }
@@ -35,7 +35,7 @@ final class CharactersViewModel: ObservableObject {
                 
             }, receiveValue: { characterList in
                 if let characters = characterList.results {
-                    self.characters = characters
+                    self.viewModels = characters.map { CharacterViewModel(character: $0) }
                 }
             })
             .store(in: &subscriptions)

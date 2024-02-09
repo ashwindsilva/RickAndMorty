@@ -96,4 +96,8 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
             label.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 8)
         ])
     }
+    
+    func configure(with viewModel: CharacterViewModel) {
+        label.text = viewModel.name
+    }
 }

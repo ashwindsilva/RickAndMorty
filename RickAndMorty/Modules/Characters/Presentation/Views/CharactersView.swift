@@ -10,8 +10,8 @@ import UIKit
 
 class CharactersView: UIView {
     
-    private typealias DataSource = UICollectionViewDiffableDataSource<CharactersViewModel.Section, Character>
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersViewModel.Section, Character>
+    private typealias DataSource = UICollectionViewDiffableDataSource<CharactersViewModel.Section, CharacterViewModel>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersViewModel.Section, CharacterViewModel>
     
     // MARK: - Properties
     
@@ -68,11 +68,11 @@ class CharactersView: UIView {
     }
     
     private func setupBindings() {
-        let charactersHandler: ([Character]) -> Void = { [weak self] _ in
+        let charactersHandler: ([CharacterViewModel]) -> Void = { [weak self] _ in
             self?.applySnapshot()
         }
         
-        viewModel.$characters
+        viewModel.$viewModels
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: charactersHandler)
             .store(in: &subscriptions)
@@ -113,13 +113,14 @@ class CharactersView: UIView {
         DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
     }
     
-    private func characterCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ character: Character) -> CharacterCollectionViewCell? {
+    private func characterCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ characterViewModel: CharacterViewModel) -> CharacterCollectionViewCell? {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier,
             for: indexPath
         ) as? CharacterCollectionViewCell else {
             fatalError("Failed to dequeue CharacterCollectionViewCell")
         }
+        cell.configure(with: characterViewModel)
         
         return cell
     }
@@ -127,7 +128,7 @@ class CharactersView: UIView {
     private func applySnapshot() {
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(viewModel.characters)
+        snapshot.appendItems(viewModel.viewModels)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
