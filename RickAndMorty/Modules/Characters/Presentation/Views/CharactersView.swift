@@ -105,6 +105,6 @@ extension CharactersView: UICollectionViewDataSource {
     }
 }
 
-#Preview {
-    CharactersView(viewModel: .init())
-}
+//#Preview {
+//    CharactersView(viewModel: .init())
+//}

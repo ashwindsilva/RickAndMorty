@@ -12,6 +12,12 @@ final class CharactersViewModel {
     // MARK: - Properties
     
     @Published private(set) var viewState: ViewState = .empty
+    
+    private let getCharactersUseCase: GetCharactersUseCaseProtocol
+    
+    init(getCharactersUseCase: GetCharactersUseCaseProtocol) {
+        self.getCharactersUseCase = getCharactersUseCase
+    }
 }
 
 extension CharactersViewModel {

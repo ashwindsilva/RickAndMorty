@@ -12,8 +12,18 @@ protocol CharactersFactoryProtocol {
 }
 
 struct CharactersFactory: CharactersFactoryProtocol {
+    let networkProvider: NetworkProvider
+    
     func makeCharactersViewController() -> CharactersViewController {
-        let charactersViewController = CharactersViewController(viewModel: .init())
+        let dataSource = CharacterNetworkDataSource(
+            networkService: networkProvider.networkService,
+            jsonDecoder: networkProvider.jsonDecoder
+        )
+        let repository = CharacterRepository(dataSource: dataSource)
+        let getCharactersUseCase = GetCharactersUseCase(repository: repository)
+        let viewModel = CharactersViewModel(getCharactersUseCase: getCharactersUseCase)
+
+        let charactersViewController = CharactersViewController(viewModel: viewModel)
         charactersViewController.title = Tab.characters.title
         
         return charactersViewController
