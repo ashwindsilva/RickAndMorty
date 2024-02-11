@@ -65,6 +65,7 @@ class CharactersView: UIView {
         )
         
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
     }
     
     private func setupBindings() {
@@ -131,6 +132,22 @@ class CharactersView: UIView {
         snapshot.appendItems(viewModel.viewModels)
         
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension CharactersView: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let scrollViewHeight = scrollView.frame.height
+        
+        let didScrollToBottom = (offsetY + scrollViewHeight) >= contentHeight
+        
+        if didScrollToBottom {
+            viewModel.getMoreCharactersIfNeeded()
+        }
     }
 }
 
