@@ -50,6 +50,7 @@
 		A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A872B75EAA900A068DD /* LocationsFactory.swift */; };
 		A20B8A8A2B763FF400A068DD /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A892B763FF400A068DD /* CharacterViewModel.swift */; };
 		A20B8A8E2B78BA1400A068DD /* LoadingIndicatorReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A8D2B78BA1400A068DD /* LoadingIndicatorReusableView.swift */; };
+		A20B8A922B7B449300A068DD /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A912B7B449300A068DD /* NetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		A20B8A872B75EAA900A068DD /* LocationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFactory.swift; sourceTree = "<group>"; };
 		A20B8A892B763FF400A068DD /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		A20B8A8D2B78BA1400A068DD /* LoadingIndicatorReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorReusableView.swift; sourceTree = "<group>"; };
+		A20B8A912B7B449300A068DD /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 				A20B8A0D2B749F9C00A068DD /* URLSessionService.swift */,
 				A20B8A0F2B74C08100A068DD /* NetworkError.swift */,
 				A20B8A212B74EFA600A068DD /* NetworkService.swift */,
+				A20B8A912B7B449300A068DD /* NetworkRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				A20B89842B6EC85C00A068DD /* DashboardViewController.swift in Sources */,
 				A20B89312B6E753200A068DD /* SceneDelegate.swift in Sources */,
 				A20B89A32B6EDC6200A068DD /* EpisodesCoordinator.swift in Sources */,
+				A20B8A922B7B449300A068DD /* NetworkRequest.swift in Sources */,
 				A20B89B52B7208E700A068DD /* CharactersView.swift in Sources */,
 				A20B89DD2B73403900A068DD /* CharacterCollectionViewCell.swift in Sources */,
 				A20B8A0E2B749F9C00A068DD /* URLSessionService.swift in Sources */,

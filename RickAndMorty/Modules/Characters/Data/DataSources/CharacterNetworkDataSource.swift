@@ -13,7 +13,7 @@ struct CharacterNetworkDataSource: CharacterDataSourceProtocol {
     let jsonDecoder: JSONDecoder
     
     func getCharacters() -> AnyPublisher<CharacterListDTO, CharacterDataSourceError> {
-        let url = URL(string: "https://rickandmortyapi.com/api/character")! // TODO: construct url
+        let url = CharacterNetworkRequest.getCharacters.url
         
         return networkService
             .request(url)
@@ -21,5 +21,15 @@ struct CharacterNetworkDataSource: CharacterDataSourceProtocol {
             .decode(type: CharacterListDTO.self, decoder: jsonDecoder)
             .mapError { CharacterDataSourceError.decoding($0) }
             .eraseToAnyPublisher()
+    }
+}
+
+// MARK: - CharacterNetworkRequest
+
+extension CharacterNetworkDataSource {
+    enum CharacterNetworkRequest: NetworkRequest {
+        case getCharacters
+        
+        var path: String { "character" }
     }
 }
