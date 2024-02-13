@@ -64,6 +64,12 @@ class CharactersView: UIView {
             forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier
         )
         
+        collectionView.register(
+            LoadingIndicatorReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: LoadingIndicatorReusableView.reuseIdentifier
+        )
+        
         collectionView.dataSource = dataSource
         collectionView.delegate = self
     }
@@ -80,14 +86,14 @@ class CharactersView: UIView {
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
+        let padding:CGFloat = 16
+        
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(0.5),
                 heightDimension: .fractionalWidth(0.5)
             )
         )
-        item.contentInsets.trailing = 16
-        item.contentInsets.bottom = 16
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
@@ -96,14 +102,28 @@ class CharactersView: UIView {
             ),
             subitems: [item]
         )
+        group.interItemSpacing = .fixed(padding)
         
         let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = padding
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 16,
-            leading: 16,
-            bottom: 0,
-            trailing: 0
+            top: padding,
+            leading: padding,
+            bottom: padding,
+            trailing: padding
         )
+        
+        if viewModel.isPaginationInProgress == true {
+            let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: .init(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .estimated(20)
+                ),
+                elementKind: UICollectionView.elementKindSectionFooter,
+                alignment: .bottom
+            )
+            section.boundarySupplementaryItems = [sectionFooter]
+        }
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         
@@ -111,7 +131,15 @@ class CharactersView: UIView {
     }
     
     private func makeDataSource() -> DataSource {
-        DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
+        let dataSource = DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
+        dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+            collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionFooter,
+                withReuseIdentifier: LoadingIndicatorReusableView.reuseIdentifier,
+                for: indexPath
+            ) as? LoadingIndicatorReusableView
+        }
+        return dataSource
     }
     
     private func characterCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ characterViewModel: CharacterViewModel) -> CharacterCollectionViewCell? {

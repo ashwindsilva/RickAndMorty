@@ -49,6 +49,7 @@
 		A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */; };
 		A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A872B75EAA900A068DD /* LocationsFactory.swift */; };
 		A20B8A8A2B763FF400A068DD /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A892B763FF400A068DD /* CharacterViewModel.swift */; };
+		A20B8A8E2B78BA1400A068DD /* LoadingIndicatorReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20B8A8D2B78BA1400A068DD /* LoadingIndicatorReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		A20B8A852B75EA9D00A068DD /* EpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesFactory.swift; sourceTree = "<group>"; };
 		A20B8A872B75EAA900A068DD /* LocationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFactory.swift; sourceTree = "<group>"; };
 		A20B8A892B763FF400A068DD /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		A20B8A8D2B78BA1400A068DD /* LoadingIndicatorReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 		A20B897D2B6EC6D100A068DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A20B8A8B2B78B9D100A068DD /* Presentation */,
 				A20B8A292B74F27200A068DD /* Domain */,
 				A20B8A252B74F21300A068DD /* Data */,
 				A20B8A092B74899100A068DD /* Networking */,
@@ -474,6 +477,22 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		A20B8A8B2B78B9D100A068DD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A8C2B78B9DF00A068DD /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A20B8A8C2B78B9DF00A068DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A8D2B78BA1400A068DD /* LoadingIndicatorReusableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -589,6 +608,7 @@
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
 				A20B8A842B75EA8500A068DD /* CharactersFactory.swift in Sources */,
 				A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */,
+				A20B8A8E2B78BA1400A068DD /* LoadingIndicatorReusableView.swift in Sources */,
 				A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
 				A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */,
