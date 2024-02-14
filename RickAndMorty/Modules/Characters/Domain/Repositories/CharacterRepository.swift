@@ -11,9 +11,9 @@ import Foundation
 struct CharacterRepository: CharacterRepositoryProtocol {
     let dataSource: CharacterDataSourceProtocol
     
-    func getCharacters() -> AnyPublisher<CharacterList, CharacterRepositoryError> {
+    func getCharacters(at page: Int) -> AnyPublisher<CharacterList, CharacterRepositoryError> {
         dataSource
-            .getCharacters()
+            .getCharacters(at: page)
             .mapError { CharacterRepositoryError.dataSource($0) }
             .map { CharacterRepositoryMapper.map($0) }
             .eraseToAnyPublisher()

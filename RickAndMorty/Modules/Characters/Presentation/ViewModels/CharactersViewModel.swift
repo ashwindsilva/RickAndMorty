@@ -16,27 +16,29 @@ final class CharactersViewModel: ObservableObject {
     
     @Published private(set) var viewModels: [CharacterViewModel] = .init() {
         didSet {
-            if viewModels.isEmpty == false {
-                viewState = .loaded
-            }
+            viewState = viewModels.isEmpty ? .empty : .loaded
         }
     }
     
     private let getCharactersUseCase: GetCharactersUseCaseProtocol
     private var subscriptions: Set<AnyCancellable> = .init()
     private var isPaginationInProgress: Bool = false
+    private var currentPage: Int = 1
     
     init(getCharactersUseCase: GetCharactersUseCaseProtocol) {
         self.getCharactersUseCase = getCharactersUseCase
     }
     
-    func getCharacters() {
-        getCharactersUseCase.execute()
-            .sink(receiveCompletion: { _ in
-                
-            }, receiveValue: { characterList in
+    func getCharacters(at page: Int = 1) {
+        isPaginationInProgress = true
+        getCharactersUseCase.execute(page: page)
+            .sink(receiveCompletion: { [weak self] _ in
+                self?.isPaginationInProgress = false
+            }, receiveValue: { [weak self] characterList in
+                guard let self else { return }
                 if let characters = characterList.results {
-                    self.viewModels = characters.map { CharacterViewModel(character: $0) }
+                    let viewModels = characters.map { CharacterViewModel(character: $0) }
+                    self.viewModels.append(contentsOf: viewModels)
                 }
             })
             .store(in: &subscriptions)
@@ -46,8 +48,8 @@ final class CharactersViewModel: ObservableObject {
         guard isPaginationInProgress == false else {
             return
         }
-        
-        isPaginationInProgress = true
+        currentPage += 1
+        getCharacters(at: currentPage)
     }
 }
 

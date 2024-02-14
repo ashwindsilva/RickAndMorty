@@ -9,6 +9,7 @@ import Foundation
 
 protocol NetworkRequest {
     var path: String { get }
+    var queryItems: [URLQueryItem] { get }
 }
 
 extension NetworkRequest {
@@ -17,7 +18,12 @@ extension NetworkRequest {
         urlComponents.scheme = "https"
         urlComponents.host = "rickandmortyapi.com"
         urlComponents.path = "/api"
+        urlComponents.queryItems = queryItems
         
         return urlComponents.url!.appending(path: path)
+    }
+    
+    var queryItems: [URLQueryItem] {
+        return []
     }
 }

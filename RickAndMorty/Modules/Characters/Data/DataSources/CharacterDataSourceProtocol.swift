@@ -14,5 +14,5 @@ enum CharacterDataSourceError: Error {
 }
 
 protocol CharacterDataSourceProtocol {
-    func getCharacters() -> AnyPublisher<CharacterListDTO, CharacterDataSourceError>
+    func getCharacters(at page: Int) -> AnyPublisher<CharacterListDTO, CharacterDataSourceError>
 }

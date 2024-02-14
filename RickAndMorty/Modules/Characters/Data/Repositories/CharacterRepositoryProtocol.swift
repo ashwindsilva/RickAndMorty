@@ -14,5 +14,5 @@ enum CharacterRepositoryError: Error {
 }
 
 protocol CharacterRepositoryProtocol {
-    func getCharacters() -> AnyPublisher<CharacterList, CharacterRepositoryError>
+    func getCharacters(at page: Int) -> AnyPublisher<CharacterList, CharacterRepositoryError>
 }

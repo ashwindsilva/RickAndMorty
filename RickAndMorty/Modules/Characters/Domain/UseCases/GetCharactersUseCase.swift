@@ -13,14 +13,14 @@ enum GetCharactersUseCaseError: Error {
 }
 
 protocol GetCharactersUseCaseProtocol {
-    func execute() -> AnyPublisher<CharacterList, GetCharactersUseCaseError>
+    func execute(page: Int) -> AnyPublisher<CharacterList, GetCharactersUseCaseError>
 }
 
 struct GetCharactersUseCase: GetCharactersUseCaseProtocol {
     let repository: CharacterRepositoryProtocol
     
-    func execute() -> AnyPublisher<CharacterList, GetCharactersUseCaseError> {
-        repository.getCharacters()
+    func execute(page: Int) -> AnyPublisher<CharacterList, GetCharactersUseCaseError> {
+        repository.getCharacters(at: page)
             .mapError { GetCharactersUseCaseError.repository($0) }
             .eraseToAnyPublisher()
     }

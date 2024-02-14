@@ -12,8 +12,8 @@ struct CharacterNetworkDataSource: CharacterDataSourceProtocol {
     let networkService: NetworkService
     let jsonDecoder: JSONDecoder
     
-    func getCharacters() -> AnyPublisher<CharacterListDTO, CharacterDataSourceError> {
-        let url = CharacterNetworkRequest.getCharacters.url
+    func getCharacters(at page: Int) -> AnyPublisher<CharacterListDTO, CharacterDataSourceError> {
+        let url = CharacterNetworkRequest.getCharacters(page: page).url
         
         return networkService
             .request(url)
@@ -28,8 +28,17 @@ struct CharacterNetworkDataSource: CharacterDataSourceProtocol {
 
 extension CharacterNetworkDataSource {
     enum CharacterNetworkRequest: NetworkRequest {
-        case getCharacters
+        case getCharacters(page: Int)
         
         var path: String { "character" }
+        
+        var queryItems: [URLQueryItem] {
+            switch self {
+            case .getCharacters(page: let page):
+                return [
+                    URLQueryItem(name: "page", value: String(page))
+                ]
+            }
+        }
     }
 }
