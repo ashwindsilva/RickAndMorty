@@ -24,7 +24,7 @@ final class CharactersViewModel: ObservableObject {
     
     private let getCharactersUseCase: GetCharactersUseCaseProtocol
     private var subscriptions: Set<AnyCancellable> = .init()
-    private(set) var isPaginationInProgress: Bool = false
+    private var isPaginationInProgress: Bool = false
     
     init(getCharactersUseCase: GetCharactersUseCaseProtocol) {
         self.getCharactersUseCase = getCharactersUseCase

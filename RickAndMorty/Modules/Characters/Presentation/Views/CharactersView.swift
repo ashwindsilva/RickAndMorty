@@ -64,12 +64,6 @@ class CharactersView: UIView {
             forCellWithReuseIdentifier: CharacterCollectionViewCell.reuseIdentifier
         )
         
-        collectionView.register(
-            LoadingIndicatorReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-            withReuseIdentifier: LoadingIndicatorReusableView.reuseIdentifier
-        )
-        
         collectionView.dataSource = dataSource
         collectionView.delegate = self
     }
@@ -113,33 +107,13 @@ class CharactersView: UIView {
             trailing: padding
         )
         
-        if viewModel.isPaginationInProgress == true {
-            let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: .init(
-                    widthDimension: .fractionalWidth(1),
-                    heightDimension: .estimated(20)
-                ),
-                elementKind: UICollectionView.elementKindSectionFooter,
-                alignment: .bottom
-            )
-            section.boundarySupplementaryItems = [sectionFooter]
-        }
-        
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
     }
     
     private func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
-        dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
-            collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionFooter,
-                withReuseIdentifier: LoadingIndicatorReusableView.reuseIdentifier,
-                for: indexPath
-            ) as? LoadingIndicatorReusableView
-        }
-        return dataSource
+        DataSource(collectionView: collectionView, cellProvider: characterCellProvider)
     }
     
     private func characterCellProvider(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ characterViewModel: CharacterViewModel) -> CharacterCollectionViewCell? {
