@@ -16,12 +16,20 @@ protocol CharacterViewModelFactory {
 }
 
 struct CharactersFactory: CharactersFactoryProtocol {
-    let networkProvider: NetworkProvider
+    // MARK: - Types
+    
+    typealias Dependency = NetworkProvider & ImageCacheProvider
+    
+    // MARK: - Properties
+    
+    let dependency: Dependency
+    
+    // MARK: - Methods
     
     func makeCharactersViewController() -> CharactersViewController {
         let dataSource = CharacterNetworkDataSource(
-            networkService: networkProvider.networkService,
-            jsonDecoder: networkProvider.jsonDecoder
+            networkService: dependency.networkService,
+            jsonDecoder: dependency.jsonDecoder
         )
         let repository = CharacterRepository(dataSource: dataSource)
         let getCharactersUseCase = GetCharactersUseCase(repository: repository)
@@ -38,7 +46,10 @@ struct CharactersFactory: CharactersFactoryProtocol {
 
 extension CharactersFactory: CharacterViewModelFactory {
     func make(character: Character) -> CharacterViewModel {
-        let dataSource = NetworkImageDataSource(networkService: networkProvider.networkService)
+        let dataSource = NetworkImageDataSource(
+            networkService: dependency.networkService,
+            cache: dependency.imageCache
+        )
         let imageDataRepository = ImageDataRepository(datasource: dataSource)
         let getImageDataUseCase = GetImageDataUseCase(repository: imageDataRepository)
         

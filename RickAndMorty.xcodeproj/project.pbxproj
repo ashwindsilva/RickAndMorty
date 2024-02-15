@@ -55,6 +55,8 @@
 		A22E4E222B7DD8F300A05039 /* ImageDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E212B7DD8F300A05039 /* ImageDataRepository.swift */; };
 		A22E4E262B7DD97E00A05039 /* NetworkImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */; };
 		A22E4E282B7DDB6300A05039 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */; };
+		A22E4E2A2B7DF93200A05039 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E292B7DF93200A05039 /* ImageCache.swift */; };
+		A22E4E2C2B7DF98400A05039 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E2B2B7DF98400A05039 /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		A22E4E212B7DD8F300A05039 /* ImageDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataRepository.swift; sourceTree = "<group>"; };
 		A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageDataSource.swift; sourceTree = "<group>"; };
 		A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
+		A22E4E292B7DF93200A05039 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		A22E4E2B2B7DF98400A05039 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,7 +419,7 @@
 		A20B8A292B74F27200A068DD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				A22E4E1D2B7DD87200A05039 /* Repositories */,
+				A22E4E1D2B7DD87200A05039 /* Protocols */,
 				A22E4E1A2B7DD7DF00A05039 /* UseCases */,
 				A20B8A2A2B74F27F00A068DD /* Entities */,
 			);
@@ -523,12 +527,14 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		A22E4E1D2B7DD87200A05039 /* Repositories */ = {
+		A22E4E1D2B7DD87200A05039 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				A22E4E1E2B7DD8A400A05039 /* ImageDataRepositoryProtocol.swift */,
+				A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */,
+				A22E4E2B2B7DF98400A05039 /* Cache.swift */,
 			);
-			path = Repositories;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A22E4E202B7DD8D700A05039 /* Repositories */ = {
@@ -542,8 +548,8 @@
 		A22E4E242B7DD94B00A05039 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */,
 				A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */,
+				A22E4E292B7DF93200A05039 /* ImageCache.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				A20B8A552B7554A500A068DD /* CharacterRepository.swift in Sources */,
 				A20B892F2B6E753200A068DD /* AppDelegate.swift in Sources */,
 				A20B89922B6ED4AE00A068DD /* SFSymbols.swift in Sources */,
+				A22E4E2C2B7DF98400A05039 /* Cache.swift in Sources */,
 				A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */,
 				A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
@@ -665,6 +672,7 @@
 				A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */,
 				A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
+				A22E4E2A2B7DF93200A05039 /* ImageCache.swift in Sources */,
 				A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */,
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
 				A20B89EC2B7374E700A068DD /* Character.swift in Sources */,

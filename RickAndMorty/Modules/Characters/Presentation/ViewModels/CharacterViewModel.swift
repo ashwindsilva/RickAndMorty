@@ -30,6 +30,8 @@ class CharacterViewModel: ObservableObject {
     }
     
     func getImageData() {
+        imageData = nil
+        
         guard let imageURL = character.image else {
             return
         }

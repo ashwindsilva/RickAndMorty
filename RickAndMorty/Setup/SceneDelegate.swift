@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let dashboardCoordinator = DashboardCoordinator(window: window!, networkProvider: appContainer)
+        let dashboardCoordinator = DashboardCoordinator(
+            window: window!,
+            dependency: appContainer
+        )
         dashboardCoordinator.start()
     }
 }
