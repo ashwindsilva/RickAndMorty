@@ -15,7 +15,7 @@ struct CharacterRepository: CharacterRepositoryProtocol {
         dataSource
             .getCharacters(at: page)
             .mapError { CharacterRepositoryError.dataSource($0) }
-            .map { CharacterRepositoryMapper.map($0) }
+            .map { CharacterMapper.map($0) }
             .eraseToAnyPublisher()
     }
 }

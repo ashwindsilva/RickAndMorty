@@ -1,5 +1,5 @@
 //
-//  CharacterRepositoryMapper.swift
+//  CharacterMapper.swift
 //  RickAndMorty
 //
 //  Created by Ashwin D'Silva on 08/02/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharacterRepositoryMapper {
+enum CharacterMapper {
     static func map(_ dto: CharacterListDTO) -> CharacterList {
         .init(
             info: InfoMapper.map(dto.info),
