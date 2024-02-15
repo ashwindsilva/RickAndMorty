@@ -14,7 +14,6 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "CharacterCollectionViewCell"
     
-    private var viewModel: CharacterViewModel?
     private var subscriptions: Set<AnyCancellable> = .init()
     
     private lazy var imageView: UIImageView = {
@@ -102,13 +101,18 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: CharacterViewModel) {
-        self.viewModel = viewModel
-        self.label.text = viewModel.name
+        label.text = viewModel.name
+        imageView.image = nil
         
-        self.viewModel?.$imageData
+        viewModel.$imageData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] data in
-                guard let self, let data, self.viewModel == viewModel else {
+                guard let self else {
+                    return
+                }
+                
+                guard let data else {
+                    self.imageView.image = nil
                     return
                 }
                 
@@ -116,6 +120,11 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
             }
             .store(in: &subscriptions)
         
-        self.viewModel?.getImageData()
+        viewModel.getImageData()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        subscriptions.removeAll()
     }
 }
