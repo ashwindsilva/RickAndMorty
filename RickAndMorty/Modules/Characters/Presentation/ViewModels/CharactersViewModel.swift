@@ -21,12 +21,17 @@ final class CharactersViewModel: ObservableObject {
     }
     
     private let getCharactersUseCase: GetCharactersUseCaseProtocol
+    private let characterViewModelFactory: CharacterViewModelFactory
     private var subscriptions: Set<AnyCancellable> = .init()
     private var isPaginationInProgress: Bool = false
     private var currentPage: Int = 1
     
-    init(getCharactersUseCase: GetCharactersUseCaseProtocol) {
+    init(
+        getCharactersUseCase: GetCharactersUseCaseProtocol,
+        characterViewModelFactory: CharacterViewModelFactory
+    ) {
         self.getCharactersUseCase = getCharactersUseCase
+        self.characterViewModelFactory = characterViewModelFactory
     }
     
     func getCharacters(at page: Int = 1) {
@@ -37,7 +42,7 @@ final class CharactersViewModel: ObservableObject {
             }, receiveValue: { [weak self] characterList in
                 guard let self else { return }
                 if let characters = characterList.results {
-                    let viewModels = characters.map { CharacterViewModel(character: $0) }
+                    let viewModels = characters.map { self.characterViewModelFactory.make(character: $0) }
                     self.viewModels.append(contentsOf: viewModels)
                 }
             })

@@ -5,6 +5,7 @@
 //  Created by Ashwin D'Silva on 07/02/24.
 //
 
+import Combine
 import UIKit
 
 final class CharacterCollectionViewCell: UICollectionViewCell {
@@ -12,6 +13,9 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     static let reuseIdentifier = "CharacterCollectionViewCell"
+    
+    private var viewModel: CharacterViewModel?
+    private var subscriptions: Set<AnyCancellable> = .init()
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -98,6 +102,20 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: CharacterViewModel) {
-        label.text = viewModel.name
+        self.viewModel = viewModel
+        self.label.text = viewModel.name
+        
+        self.viewModel?.$imageData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] data in
+                guard let self, let data, self.viewModel == viewModel else {
+                    return
+                }
+                
+                self.imageView.image = UIImage(data: data)
+            }
+            .store(in: &subscriptions)
+        
+        self.viewModel?.getImageData()
     }
 }
