@@ -8,12 +8,12 @@
 import Combine
 import Foundation
 
-struct ImageDataRepository: ImageDataRepositoryProtocol {
-    let datasource: ImageDataSourceProtocol
+struct ImageDataRepository<DataSource: ImageDataSourceProtocol>: ImageDataRepositoryProtocol {
+    let datasource: DataSource
     
-    func getImage(_ url: URL) -> AnyPublisher<Data, ImageDataSourceError> {
+    func getImage(_ url: URL) -> AnyPublisher<Data, ImageDataRepositoryError> {
         datasource.getImage(url)
-            .mapError { ImageDataSourceError.datasource($0) }
+            .mapError { ImageDataRepositoryError.datasource($0) }
             .eraseToAnyPublisher()
     }
 }

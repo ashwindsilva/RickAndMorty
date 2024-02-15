@@ -8,10 +8,10 @@
 import Combine
 import Foundation
 
-enum ImageDataSourceError: Error {
+enum ImageDataRepositoryError: Error {
     case datasource(Error)
 }
 
 protocol ImageDataRepositoryProtocol {
-    func getImage(_ url: URL) -> AnyPublisher<Data, ImageDataSourceError>
+    func getImage(_ url: URL) -> AnyPublisher<Data, ImageDataRepositoryError>
 }

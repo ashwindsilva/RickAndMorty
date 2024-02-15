@@ -9,5 +9,7 @@ import Combine
 import Foundation
 
 protocol ImageDataSourceProtocol {
-    func getImage(_ url: URL) -> AnyPublisher<Data, NetworkImageDataSourceError>
+    associatedtype ImageDataSourceError: Error
+    
+    func getImage(_ url: URL) -> AnyPublisher<Data, ImageDataSourceError>
 }
