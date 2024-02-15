@@ -12,10 +12,6 @@ enum NetworkImageDataSourceError: Error {
     case network(Error)
 }
 
-protocol ImageDataSourceProtocol {
-    func getImage(_ url: URL) -> AnyPublisher<Data, NetworkImageDataSourceError>
-}
-
 struct NetworkImageDataSource: ImageDataSourceProtocol {
     let networkService: NetworkService
     

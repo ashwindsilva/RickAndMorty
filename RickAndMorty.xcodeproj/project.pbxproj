@@ -54,6 +54,7 @@
 		A22E4E1F2B7DD8A400A05039 /* ImageDataRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E1E2B7DD8A400A05039 /* ImageDataRepositoryProtocol.swift */; };
 		A22E4E222B7DD8F300A05039 /* ImageDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E212B7DD8F300A05039 /* ImageDataRepository.swift */; };
 		A22E4E262B7DD97E00A05039 /* NetworkImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */; };
+		A22E4E282B7DDB6300A05039 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		A22E4E1E2B7DD8A400A05039 /* ImageDataRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A22E4E212B7DD8F300A05039 /* ImageDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataRepository.swift; sourceTree = "<group>"; };
 		A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageDataSource.swift; sourceTree = "<group>"; };
+		A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,8 +441,8 @@
 		A20B8A442B754DA500A068DD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				A20B8A542B7554A500A068DD /* CharacterRepository.swift */,
 				A20B8A452B754DCB00A068DD /* CharacterRepositoryMapper.swift */,
-				A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -457,7 +459,7 @@
 		A20B8A582B75581100A068DD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				A20B8A542B7554A500A068DD /* CharacterRepository.swift */,
+				A20B8A562B7554C800A068DD /* CharacterRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -540,6 +542,7 @@
 		A22E4E242B7DD94B00A05039 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */,
 				A22E4E252B7DD97E00A05039 /* NetworkImageDataSource.swift */,
 			);
 			path = DataSources;
@@ -687,6 +690,7 @@
 				A20B89F02B73931A00A068DD /* DateFormatter+Extension.swift in Sources */,
 				A20B898A2B6ECA3500A068DD /* CharactersCoordinator.swift in Sources */,
 				A20B8A432B754D3F00A068DD /* InfoMapper.swift in Sources */,
+				A22E4E282B7DDB6300A05039 /* ImageDataSourceProtocol.swift in Sources */,
 				A22E4E1F2B7DD8A400A05039 /* ImageDataRepositoryProtocol.swift in Sources */,
 				A20B8A882B75EAA900A068DD /* LocationsFactory.swift in Sources */,
 				A20B8A282B74F23300A068DD /* InfoDTO.swift in Sources */,
