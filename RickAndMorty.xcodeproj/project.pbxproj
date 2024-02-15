@@ -57,6 +57,9 @@
 		A22E4E282B7DDB6300A05039 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */; };
 		A22E4E2A2B7DF93200A05039 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E292B7DF93200A05039 /* ImageCache.swift */; };
 		A22E4E2C2B7DF98400A05039 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E2B2B7DF98400A05039 /* Cache.swift */; };
+		A22E4E2F2B7E156300A05039 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E2E2B7E156300A05039 /* NetworkServiceProvider.swift */; };
+		A22E4E312B7E158400A05039 /* JSONDecoderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E302B7E158400A05039 /* JSONDecoderProvider.swift */; };
+		A22E4E332B7E15A700A05039 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E322B7E15A700A05039 /* ImageCacheProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		A22E4E272B7DDB6300A05039 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		A22E4E292B7DF93200A05039 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		A22E4E2B2B7DF98400A05039 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A22E4E2E2B7E156300A05039 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
+		A22E4E302B7E158400A05039 /* JSONDecoderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderProvider.swift; sourceTree = "<group>"; };
+		A22E4E322B7E15A700A05039 /* ImageCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,11 +170,11 @@
 		A20B892D2B6E753200A068DD /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				A20B8A782B75DF0600A068DD /* Preview Content */,
 				A20B897D2B6EC6D100A068DD /* Common */,
 				A20B897A2B6EC55F00A068DD /* Modules */,
-				A20B89422B6E86E100A068DD /* Resources */,
 				A20B89452B6E8D3E00A068DD /* Setup */,
+				A20B89422B6E86E100A068DD /* Resources */,
+				A20B8A782B75DF0600A068DD /* Preview Content */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 		A20B89452B6E8D3E00A068DD /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				A22E4E2D2B7E154800A05039 /* Protocols */,
 				A20B8A802B75EA0F00A068DD /* Factories */,
 				A20B892E2B6E753200A068DD /* AppDelegate.swift */,
 				A20B89302B6E753200A068DD /* SceneDelegate.swift */,
@@ -554,6 +561,16 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		A22E4E2D2B7E154800A05039 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A22E4E2E2B7E156300A05039 /* NetworkServiceProvider.swift */,
+				A22E4E302B7E158400A05039 /* JSONDecoderProvider.swift */,
+				A22E4E322B7E15A700A05039 /* ImageCacheProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -667,8 +684,10 @@
 				A22E4E2C2B7DF98400A05039 /* Cache.swift in Sources */,
 				A20B8A862B75EA9D00A068DD /* EpisodesFactory.swift in Sources */,
 				A20B8A222B74EFA600A068DD /* NetworkService.swift in Sources */,
+				A22E4E332B7E15A700A05039 /* ImageCacheProvider.swift in Sources */,
 				A20B89822B6EC76100A068DD /* DashboardCoordinator.swift in Sources */,
 				A20B8A842B75EA8500A068DD /* CharactersFactory.swift in Sources */,
+				A22E4E312B7E158400A05039 /* JSONDecoderProvider.swift in Sources */,
 				A20B8A2E2B74F3A500A068DD /* CharacterList.swift in Sources */,
 				A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
@@ -687,6 +706,7 @@
 				A20B8A922B7B449300A068DD /* NetworkRequest.swift in Sources */,
 				A22E4E1C2B7DD7F200A05039 /* GetImageDataUseCase.swift in Sources */,
 				A20B89B52B7208E700A068DD /* CharactersView.swift in Sources */,
+				A22E4E2F2B7E156300A05039 /* NetworkServiceProvider.swift in Sources */,
 				A20B89DD2B73403900A068DD /* CharacterCollectionViewCell.swift in Sources */,
 				A20B8A0E2B749F9C00A068DD /* URLSessionService.swift in Sources */,
 				A20B899F2B6EDA9800A068DD /* LocationsViewController.swift in Sources */,

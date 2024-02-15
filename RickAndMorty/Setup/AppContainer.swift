@@ -7,18 +7,6 @@
 
 import UIKit
 
-protocol NetworkServiceProvider {
-    var networkService: NetworkService { get }
-}
-
-protocol JSONDecoderProvider {
-    var jsonDecoder: JSONDecoder { get }
-}
-
-protocol ImageCacheProvider {
-    var imageCache: ImageCache { get }
-}
-
 typealias NetworkProvider = NetworkServiceProvider & JSONDecoderProvider
 
 final class AppContainer: NetworkProvider, ImageCacheProvider {
