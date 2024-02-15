@@ -218,9 +218,7 @@
 		A20B897D2B6EC6D100A068DD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A20B8A8B2B78B9D100A068DD /* Presentation */,
-				A20B8A292B74F27200A068DD /* Domain */,
-				A20B8A252B74F21300A068DD /* Data */,
+				A22E4E142B7DCA9100A05039 /* Layers */,
 				A20B8A092B74899100A068DD /* Networking */,
 				A20B89952B6ED4E400A068DD /* Constants */,
 				A20B897E2B6EC6E200A068DD /* Coordinator.swift */,
@@ -491,6 +489,16 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A22E4E142B7DCA9100A05039 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				A20B8A8B2B78B9D100A068DD /* Presentation */,
+				A20B8A292B74F27200A068DD /* Domain */,
+				A20B8A252B74F21300A068DD /* Data */,
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
