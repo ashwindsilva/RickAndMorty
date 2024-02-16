@@ -56,6 +56,10 @@ final class CharactersViewModel: ObservableObject {
         currentPage += 1
         getCharacters(at: currentPage)
     }
+    
+    func character(at indexPath: IndexPath) -> Character {
+        return viewModels[indexPath.item].character
+    }
 }
 
 extension CharactersViewModel {

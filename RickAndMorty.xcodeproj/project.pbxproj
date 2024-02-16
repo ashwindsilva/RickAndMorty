@@ -60,6 +60,8 @@
 		A22E4E2F2B7E156300A05039 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E2E2B7E156300A05039 /* NetworkServiceProvider.swift */; };
 		A22E4E312B7E158400A05039 /* JSONDecoderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E302B7E158400A05039 /* JSONDecoderProvider.swift */; };
 		A22E4E332B7E15A700A05039 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22E4E322B7E15A700A05039 /* ImageCacheProvider.swift */; };
+		A2FF033E2B7F5A110027A306 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF033D2B7F5A110027A306 /* CharacterDetailViewController.swift */; };
+		A2FF03402B7F7D3E0027A306 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF033F2B7F7D3E0027A306 /* CharacterDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		A22E4E2E2B7E156300A05039 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
 		A22E4E302B7E158400A05039 /* JSONDecoderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderProvider.swift; sourceTree = "<group>"; };
 		A22E4E322B7E15A700A05039 /* ImageCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProvider.swift; sourceTree = "<group>"; };
+		A2FF033D2B7F5A110027A306 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		A2FF033F2B7F7D3E0027A306 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				A20B898B2B6ECA5400A068DD /* CharactersViewController.swift */,
+				A2FF033D2B7F5A110027A306 /* CharacterDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 			children = (
 				A20B89B62B72091600A068DD /* CharactersViewModel.swift */,
 				A20B8A892B763FF400A068DD /* CharacterViewModel.swift */,
+				A2FF033F2B7F7D3E0027A306 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -701,10 +707,12 @@
 				A20B8A822B75EA2900A068DD /* DashboardFactory.swift in Sources */,
 				A20B89942B6ED4D900A068DD /* LocalizedStrings.swift in Sources */,
 				A22E4E2A2B7DF93200A05039 /* ImageCache.swift in Sources */,
+				A2FF033E2B7F5A110027A306 /* CharacterDetailViewController.swift in Sources */,
 				A20B8A522B7553F000A068DD /* CharacterNetworkDataSource.swift in Sources */,
 				A20B89B72B72091600A068DD /* CharactersViewModel.swift in Sources */,
 				A20B89EC2B7374E700A068DD /* Character.swift in Sources */,
 				A22E4E262B7DD97E00A05039 /* NetworkImageDataSource.swift in Sources */,
+				A2FF03402B7F7D3E0027A306 /* CharacterDetailViewModel.swift in Sources */,
 				A20B8A102B74C08100A068DD /* NetworkError.swift in Sources */,
 				A20B8A8A2B763FF400A068DD /* CharacterViewModel.swift in Sources */,
 				A20B89992B6ED58800A068DD /* Tab.swift in Sources */,

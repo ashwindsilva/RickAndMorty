@@ -14,9 +14,10 @@ class CharacterViewModel: ObservableObject {
     
     @Published private(set) var imageData: Data?
     
-    private let character: Character
     private let getImageDataUseCase: GetImageDataUseCaseProtocol
     private var subscriptions: Set<AnyCancellable> = .init()
+    
+    let character: Character
     
     var name: String {
         character.name ?? LocalizedStrings.na

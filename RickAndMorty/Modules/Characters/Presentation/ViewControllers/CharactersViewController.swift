@@ -8,12 +8,17 @@
 import Combine
 import UIKit
 
+protocol CharactersViewControllerDelegate: AnyObject, CharactersViewDelegate {
+}
+
 class CharactersViewController: UIViewController {
     
     // MARK: - Properties
     
     private let viewModel: CharactersViewModel
     private var subscriptions: Set<AnyCancellable> = .init()
+    
+    weak var delegate: CharactersViewControllerDelegate?
 
     // MARK: - Lifecycle
     
@@ -27,7 +32,9 @@ class CharactersViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = CharactersView(viewModel: viewModel)
+        let mainView = CharactersView(viewModel: viewModel)
+        mainView.delegate = delegate
+        self.view = mainView
     }
     
     override func viewDidLoad() {

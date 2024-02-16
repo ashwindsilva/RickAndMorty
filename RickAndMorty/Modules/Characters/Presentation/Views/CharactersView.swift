@@ -8,6 +8,10 @@
 import Combine
 import UIKit
 
+protocol CharactersViewDelegate: AnyObject {
+    func didSelectCharacter(_ character: Character)
+}
+
 class CharactersView: UIView {
     
     private typealias DataSource = UICollectionViewDiffableDataSource<CharactersViewModel.Section, CharacterViewModel>
@@ -18,6 +22,8 @@ class CharactersView: UIView {
     private let viewModel: CharactersViewModel
     private var subscriptions: Set<AnyCancellable> = .init()
     private lazy var dataSource = makeDataSource()
+    
+    weak var delegate: CharactersViewDelegate?
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
@@ -150,6 +156,11 @@ extension CharactersView: UICollectionViewDelegate {
         if didScrollToBottom {
             viewModel.getMoreCharactersIfNeeded()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let character = viewModel.character(at: indexPath)
+        delegate?.didSelectCharacter(character)
     }
 }
 

@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharactersFactoryProtocol {
     func makeCharactersViewController() -> CharactersViewController
+    func makeCharacterDetailViewController(for character: Character) -> CharacterDetailViewController
 }
 
 protocol CharacterViewModelFactory {
@@ -39,6 +40,13 @@ struct CharactersFactory: CharactersFactoryProtocol {
         charactersViewController.title = Tab.characters.title
         
         return charactersViewController
+    }
+    
+    func makeCharacterDetailViewController(for character: Character) -> CharacterDetailViewController {
+        let viewController = CharacterDetailViewController(
+            viewModel: .init(character: character)
+        )
+        return viewController
     }
 }
 

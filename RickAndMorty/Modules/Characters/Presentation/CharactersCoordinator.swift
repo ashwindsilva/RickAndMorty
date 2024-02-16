@@ -25,6 +25,20 @@ final class CharactersCoordinator: NavigationCoordinator {
     
     func start() {
         let charactersViewController = charactersFactory.makeCharactersViewController()
+        charactersViewController.delegate = self
         navigationController.pushViewController(charactersViewController, animated: false)
+    }
+    
+    func pushCharacterDetailViewController(for character: Character) {
+        let viewController = charactersFactory.makeCharacterDetailViewController(for: character)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - CharactersViewControllerDelegate
+
+extension CharactersCoordinator: CharactersViewControllerDelegate {
+    func didSelectCharacter(_ character: Character) {
+        pushCharacterDetailViewController(for: character)
     }
 }
