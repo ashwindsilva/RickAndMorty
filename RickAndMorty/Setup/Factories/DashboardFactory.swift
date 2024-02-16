@@ -8,46 +8,16 @@
 import UIKit
 
 protocol DashboardFactoryProtocol {
-    func makeDashboardViewController(
-        charactersFactory: CharactersFactoryProtocol,
-        locationsFactory: LocationsFactoryProtocol,
-        episodesFactory: EpisodesFactoryProtocol
-    ) -> DashboardViewController
+    func makeDashboardViewController(with viewControllers: [UIViewController]) -> DashboardViewController
     func makeCharactersNavigationController() -> UINavigationController
     func makeLocationsNavigationController() -> UINavigationController
     func makeEpisodesNavigationController() -> UINavigationController
 }
 
 struct DashboardFactory: DashboardFactoryProtocol {
-    func makeDashboardViewController(
-        charactersFactory: CharactersFactoryProtocol,
-        locationsFactory: LocationsFactoryProtocol,
-        episodesFactory: EpisodesFactoryProtocol
-    ) -> DashboardViewController {
+    func makeDashboardViewController(with viewControllers: [UIViewController]) -> DashboardViewController {
         let dashboardViewController = DashboardViewController()
-        let childCoordinators: [NavigationCoordinator] = [
-            CharactersCoordinator(
-                navigationController: makeCharactersNavigationController(),
-                charactersFactory: charactersFactory
-            ),
-            LocationsCoordinator(
-                navigationController: makeLocationsNavigationController(),
-                locationsFactory: locationsFactory
-            ),
-            EpisodesCoordinator(
-                navigationController: makeEpisodesNavigationController(),
-                episodesFactory: episodesFactory
-            )
-        ]
-        
-        dashboardViewController.viewControllers = childCoordinators.map { childCoordinator in
-            childCoordinator.navigationController
-        }
-        
-        childCoordinators.forEach { childCoordinator in
-            childCoordinator.start()
-        }
-        
+        dashboardViewController.viewControllers = viewControllers
         return dashboardViewController
     }
     

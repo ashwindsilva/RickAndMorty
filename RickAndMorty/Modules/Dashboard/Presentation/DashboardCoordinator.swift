@@ -14,6 +14,7 @@ final class DashboardCoordinator: Coordinator {
     
     private let window: UIWindow
     private let dependency: Dependency
+    private var coordinators: [NavigationCoordinator] = []
     
     // MARK: - Init
     
@@ -25,11 +26,30 @@ final class DashboardCoordinator: Coordinator {
     // MARK: - Methods
     
     func start() {
-        window.rootViewController = DashboardFactory().makeDashboardViewController(
-            charactersFactory: CharactersFactory(dependency: dependency),
-            locationsFactory: LocationsFactory(),
+        let dashboardFactory = DashboardFactory()
+        
+        let charactersCoordinator = CharactersCoordinator(
+            navigationController: dashboardFactory.makeCharactersNavigationController(),
+            charactersFactory: CharactersFactory(dependency: dependency)
+        )
+        
+        let locationsCoordinator = LocationsCoordinator(
+            navigationController: dashboardFactory.makeLocationsNavigationController(),
+            locationsFactory: LocationsFactory()
+        )
+        
+        let episodesCoordinator = EpisodesCoordinator(
+            navigationController: dashboardFactory.makeEpisodesNavigationController(),
             episodesFactory: EpisodesFactory()
         )
+        
+        coordinators = [charactersCoordinator, locationsCoordinator, episodesCoordinator]
+        
+        window.rootViewController = dashboardFactory.makeDashboardViewController(
+            with: coordinators.map { $0.navigationController }
+        )
         window.makeKeyAndVisible()
+        
+        coordinators.forEach { $0.start() }
     }
 }

@@ -11,16 +11,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     private let appContainer: AppContainer = .init()
+    private var dashboardCoordinator: DashboardCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
         
-        let dashboardCoordinator = DashboardCoordinator(
+        dashboardCoordinator = DashboardCoordinator(
             window: window!,
             dependency: appContainer
         )
-        dashboardCoordinator.start()
+        dashboardCoordinator?.start()
     }
 }
