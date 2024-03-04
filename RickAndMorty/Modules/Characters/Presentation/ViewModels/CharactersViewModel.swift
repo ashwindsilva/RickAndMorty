@@ -26,6 +26,8 @@ final class CharactersViewModel: ObservableObject {
     private var isPaginationInProgress: Bool = false
     private var currentPage: Int = 1
     
+    // MARK: - Init
+    
     init(
         getCharactersUseCase: GetCharactersUseCaseProtocol,
         characterViewModelFactory: CharacterViewModelFactory
@@ -33,6 +35,8 @@ final class CharactersViewModel: ObservableObject {
         self.getCharactersUseCase = getCharactersUseCase
         self.characterViewModelFactory = characterViewModelFactory
     }
+    
+    // MARK: - Methods
     
     func getCharacters(at page: Int = 1) {
         isPaginationInProgress = true
@@ -61,6 +65,8 @@ final class CharactersViewModel: ObservableObject {
         return viewModels[indexPath.item].character
     }
 }
+
+// MARK: - Types
 
 extension CharactersViewModel {
     enum ViewState {

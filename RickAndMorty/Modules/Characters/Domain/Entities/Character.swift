@@ -24,6 +24,8 @@ struct Character {
     let created: Date?
 }
 
+// MARK: - Types
+
 extension Character {
     enum Status: String {
         case alive
