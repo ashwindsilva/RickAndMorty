@@ -25,6 +25,7 @@ final class CharactersViewModel: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = .init()
     private var isPaginationInProgress: Bool = false
     private var currentPage: Int = 1
+    private var hasMorePages: Bool = true
     
     // MARK: - Init
     
@@ -45,6 +46,9 @@ final class CharactersViewModel: ObservableObject {
                 self?.isPaginationInProgress = false
             }, receiveValue: { [weak self] characterList in
                 guard let self else { return }
+                if characterList.info?.next == nil {
+                    self.hasMorePages = false
+                }
                 if let characters = characterList.results {
                     let viewModels = characters.map { self.characterViewModelFactory.make(character: $0) }
                     self.viewModels.append(contentsOf: viewModels)
@@ -54,7 +58,7 @@ final class CharactersViewModel: ObservableObject {
     }
     
     func getMoreCharactersIfNeeded() {
-        guard isPaginationInProgress == false else {
+        guard isPaginationInProgress == false, hasMorePages else {
             return
         }
         currentPage += 1
