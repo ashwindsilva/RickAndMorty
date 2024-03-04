@@ -19,10 +19,10 @@ enum CharacterMapper {
         .init(
             id: dto.id,
             name: dto.name,
-            status: .init(rawValue: dto.status ?? .init()),
+            status: .init(rawValue: dto.status?.lowercased() ?? .init()),
             species: dto.species,
             type: dto.type,
-            gender: .init(rawValue: dto.gender ?? .init()),
+            gender: .init(rawValue: dto.gender?.lowercased() ?? .init()),
             origin: Self.map(dto.origin),
             location: Self.map(dto.location),
             image: .init(string: dto.image ?? .init()),

@@ -8,7 +8,7 @@
 import UIKit
 
 class CharacterDetailViewController: UIViewController {
-    
+
     // MARK: - Properties
     
     private let viewModel: CharacterDetailViewModel
@@ -24,8 +24,17 @@ class CharacterDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        view = CharacterDetailView(viewModel: viewModel)
+        configureUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+    }
+    
+    private func configureUI() {
+        title = viewModel.name
     }
 }

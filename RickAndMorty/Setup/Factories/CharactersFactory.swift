@@ -16,6 +16,10 @@ protocol CharacterViewModelFactory {
     func make(character: Character) -> CharacterViewModel
 }
 
+protocol CharacterImageTableViewCellViewModelFactory {
+    func make(character: Character) -> CharacterImageTableViewCellViewModel
+}
+
 struct CharactersFactory: CharactersFactoryProtocol {
     // MARK: - Types
     
@@ -43,10 +47,14 @@ struct CharactersFactory: CharactersFactoryProtocol {
     }
     
     func makeCharacterDetailViewController(for character: Character) -> CharacterDetailViewController {
-        let viewController = CharacterDetailViewController(
-            viewModel: .init(character: character)
-        )
+        let viewModel = makeCharacterDetailViewModel(for: character)
+        let viewController = CharacterDetailViewController(viewModel: viewModel)
+        
         return viewController
+    }
+    
+    private func makeCharacterDetailViewModel(for character: Character) -> CharacterDetailViewModel {
+        return .init(character: character, factory: self)
     }
 }
 
@@ -62,6 +70,24 @@ extension CharactersFactory: CharacterViewModelFactory {
         let getImageDataUseCase = GetImageDataUseCase(repository: imageDataRepository)
         
         return CharacterViewModel.init(
+            character: character,
+            getImageDataUseCase: getImageDataUseCase
+        )
+    }
+}
+
+// MARK: - CharacterImageTableViewCellViewModelFactory
+
+extension CharactersFactory: CharacterImageTableViewCellViewModelFactory {
+    func make(character: Character) -> CharacterImageTableViewCellViewModel {
+        let dataSource = NetworkImageDataSource(
+            networkService: dependency.networkService,
+            cache: dependency.imageCache
+        )
+        let imageDataRepository = ImageDataRepository(datasource: dataSource)
+        let getImageDataUseCase = GetImageDataUseCase(repository: imageDataRepository)
+        
+        return .init(
             character: character,
             getImageDataUseCase: getImageDataUseCase
         )
