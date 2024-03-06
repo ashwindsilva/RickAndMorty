@@ -163,7 +163,3 @@ extension CharactersView: UICollectionViewDelegate {
         delegate?.didSelectCharacter(character)
     }
 }
-
-//#Preview {
-//    CharactersView(viewModel: .init())
-//}
