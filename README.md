@@ -12,9 +12,11 @@
 - UIKit
 - Combine for networking and data binding
 - MVVM
-- Clean architecture
+- Clean architecture separating data, domain and presentation layers
+- Repository pattern, dependency injection
 - Image caching using NSCache
 - Coordinators for navigation
+- Compositional layout and diffable datasource
 - Supports light and dark mode
 
 ## Screenshots
